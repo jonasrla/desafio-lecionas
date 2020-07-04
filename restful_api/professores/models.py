@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Professor(models.Model):
     nome = models.CharField(max_length=100)
@@ -9,3 +10,6 @@ class Professor(models.Model):
 
     def __str__(self):
         return self.email
+
+    def get_absolute_url(self):
+        return reverse('professor_edit', kwargs={'pk': self.pk})
