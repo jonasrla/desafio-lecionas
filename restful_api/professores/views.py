@@ -7,22 +7,22 @@ from django.urls import reverse_lazy
 
 from professores.models import Professor
 
-class BookList(ListView):
+class ProfessorList(ListView):
     model = Professor
 
-class BookView(DetailView):
+class ProfessorView(DetailView):
     model = Professor
 
-class BookCreate(CreateView):
+class ProfessorCreate(CreateView):
     model = Professor
     fields = ['nome','email','nascimento']
-    success_url = reverse_lazy('book_list')
+    success_url = reverse_lazy('professor_list')
 
-class BookUpdate(UpdateView):
+class ProfessorUpdate(UpdateView):
     model = Professor
     fields = ['nome','email','nascimento']
-    success_url = reverse_lazy('book_list')
+    success_url = reverse_lazy('professor_list')
 
-class BookDelete(DeleteView):
+class ProfessorDelete(DeleteView):
     model = Professor
-    success_url = reverse_lazy('book_list')
+    success_url = reverse_lazy('professor_list')
